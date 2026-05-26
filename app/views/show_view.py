@@ -131,21 +131,21 @@ class ShowView(QDialog):
 
             self.ui.gener_lable.setText(str(media_details.get("genres", "")))
             self.image_loader.load_image(url=media_details.get("cover_url"),label=self.ui.cover_lable,width=180,height=270,placeholder="⏳",error_text="🖼️")
-            self.ui.director_name.setText(media_details.get("director_name", ""))
-            self.image_loader.load_image(url=media_details.get("director_image"),label=self.ui.director_cover_label,width=180,height=270,placeholder="⏳",error_text="🖼️")
+            # self.ui.director_name.setText(media_details.get("director_name", ""))
+            # self.image_loader.load_image(url=media_details.get("director_image"),label=self.ui.director_cover_label,width=180,height=270,placeholder="⏳",error_text="🖼️")
 
             self.description = media_details.get("description", "")
             self.trailer_url = media_details.get("trailer", "")
 
-            self.ui.tmdb_rating.setText(str(media_details.get("tmdb_rating", "")))
-            self.ui.tmdb_votes.setText(str(media_details.get("tmdb_votes", "")))
-            self.ui.imdb_rating.setText(str(media_details.get("imdb_rating", "")))
-            self.ui.imdb_votes.setText(str(media_details.get("imdb_votes", "")))
+            # self.ui.tmdb_rating.setText(str(media_details.get("tmdb_rating", "")))
+            # self.ui.tmdb_votes.setText(str(media_details.get("tmdb_votes", "")))
+            # self.ui.imdb_rating.setText(str(media_details.get("imdb_rating", "")))
+            # self.ui.imdb_votes.setText(str(media_details.get("imdb_votes", "")))
 
-            self.ui.rotten_tomatos_rating.setText(str(media_details.get("rotten_tomatoes", "")))
-            self.ui.metascore_rating.setText(str(media_details.get("metascore", "")))
-            self.cast = media_details.get("cast", [])
-            self._show_cast()
+            # self.ui.rotten_tomatos_rating.setText(str(media_details.get("rotten_tomatoes", "")))
+            # self.ui.metascore_rating.setText(str(media_details.get("metascore", "")))
+            # self.cast = media_details.get("cast", [])
+            # self._show_cast()
 
             self.id = media_details.get("id", None)
 
@@ -174,16 +174,16 @@ class ShowView(QDialog):
         else:
             QMessageBox.warning(self, "No Trailer", "Trailer URL is not available.")
 
-    def _show_cast(self):
+    # def _show_cast(self):
         
-        for actor in self.cast:
-            card = CastCard(
-                name=actor.get("name", ""),
-                character=actor.get("character", ""),
-                profile_url=actor.get("profile", ""),
-                load_image_func=self.image_loader.load_image
-            )
-            self.ui.cast_layout.addWidget(card)
+    #     for actor in self.cast:
+    #         card = CastCard(
+    #             name=actor.get("name", ""),
+    #             character=actor.get("character", ""),
+    #             profile_url=actor.get("profile", ""),
+    #             load_image_func=self.image_loader.load_image
+    #         )
+    #         self.ui.cast_layout.addWidget(card)
 
 
     # Presenter calls this to populate options
